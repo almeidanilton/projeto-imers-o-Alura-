@@ -1,0 +1,495 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+</style>
+
+* {
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho total do elemento */
+}
+
+:root {
+    /* Nova paleta de cores: Deep Blue & Violet */
+    --primary-color: #8B5CF6; /* Roxo vibrante para destaque */
+    --secondary-color: #F9FAFB; /* Quase branco para textos principais */
+    --tertiary-color: #9CA3AF; /* Cinza claro para textos secundários */
+    --bg-color: #111827; /* Azul muito escuro para o fundo */
+    --card-bg-color: #1F2937; /* Azul-acinzentado escuro para cards e elementos */
+}
+
+body {
+    position: relative; /* Necessário para o posicionamento do efeito de fundo */
+    display: flex; /* 1. Transforma o body em um container flex */
+    flex-direction: column; /* 2. Organiza os itens em coluna (header, main, footer) */
+    min-height: 100vh; /* 3. Garante que o body ocupe no mínimo a altura total da tela */
+    margin: 0; /* Remove a margem padrão do body */
+    background: var(--bg-color); /* Define a cor de fundo usando uma variável */
+    color: var(--secondary-color); /* Define a cor do texto padrão usando uma variável */    
+    font-family: "Poppins", sans-serif; /* Define a família de fontes */
+}
+
+/* Efeito de fundo interativo */
+body::before {
+    content: '';
+    position: fixed; /* Fixo na viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(139, 92, 246, 0.1), transparent 80%);
+    z-index: -1; /* Coloca o efeito atrás de todo o conteúdo */
+    pointer-events: none; /* Garante que o efeito não interfira com cliques */
+}
+
+header {
+    padding: 2rem 1rem; /* Espaçamento interno (2rem em cima/baixo, 1rem nos lados) */
+    display: flex; /* Habilita o layout flexbox */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    justify-content: space-around; /* Distribui os itens com espaço ao redor */
+    position: sticky; /* Mantém o cabeçalho fixo no topo ao rolar a página */
+    top: 0; /* Posição do topo quando sticky */
+    background: var(--bg-color); /* Cor de fundo do cabeçalho */
+    z-index: 100; /* Aumentado para garantir que fique sobre tudo */
+    border-bottom: 1px solid var(--bg-color); /* Adiciona uma borda inferior */
+    gap: 1rem; /* Espaçamento entre os elementos flex */
+}
+
+header h1 {
+    font-size: 1.5rem; /* Tamanho da fonte */
+    margin: 0; /* Remove a margem padrão */
+    font-weight: 500; /* Peso da fonte (médio) */
+    white-space: nowrap; /* Impede a quebra de linha do texto */
+}
+
+/* --- Seção Introdutória --- */
+.intro-section {
+    text-align: center;
+    padding: 3rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.intro-section h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    /* Efeito de gradiente no texto para dar mais vida */
+    background: linear-gradient(45deg, var(--primary-color), #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intro-section p {
+    font-size: 1.2rem;
+    color: var(--tertiary-color);
+}
+
+/* Novo container para a busca para permitir o efeito de floating label */
+.search-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os botões quebrem a linha em telas menores */
+    align-items: center;
+}
+
+/* Estilo para a label que vai "flutuar" */
+.search-container label {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--tertiary-color);
+    pointer-events: none; /* Permite cliques "através" da label no input */
+    transition: all 0.2s ease;
+    background-color: var(--bg-color); /* Garante que o texto do input não passe por cima */
+    padding: 0 0.25rem; /* Espaçamento para não cortar a borda do input */
+}
+
+/* Quando o input está focado ou preenchido, a label sobe */
+.search-container input:focus + label,
+.search-container input:not(:placeholder-shown) + label {
+    top: 0;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+}
+
+#busca {
+    padding: 0.375rem 0.75rem; /* Espaçamento interno */
+    border-radius: 1rem; /* Arredonda as bordas */
+    border: 1px solid var(--card-bg-color); /* Define a borda */
+    font-family: inherit; /* Herda a família da fonte do elemento pai */
+    font-size: 1.5rem; /* Tamanho da fonte */
+    transition: all 0.2s ease; /* Adiciona uma transição suave para todas as propriedades */
+    width: 30rem; /* Largura do input */
+    color: var(--secondary-color); /* Cor do texto digitado */
+    margin-right: .5rem; /* Margem à direita */
+}
+ 
+/* O input precisa de um fundo transparente para a label funcionar bem no início */
+#busca {
+    background: transparent;
+}
+
+#busca:focus {
+    outline: none; /* Remove a borda de foco padrão */
+    border-color: var(--primary-color);
+}
+
+#botao-busca {
+    padding: 1rem 2rem; /* Espaçamento interno */
+    border-radius: 1rem; /* Arredonda as bordas */
+    border: none; /* Remove a borda padrão */
+    cursor: pointer; /* Muda o cursor para uma mão ao passar por cima */
+    font-family: inherit; /* Herda a família da fonte */
+    font-weight: 500; /* Peso da fonte */
+    font-size: 1rem; /* Tamanho da fonte */
+    white-space: nowrap; /* Impede a quebra de linha do texto */
+    transition: background-color 0.2s ease, color 0.2s ease; /* Transição suave para cor de fundo e cor do texto */
+    background-color: var(--bg-color); /* Cor de fundo */
+    color: var(--secondary-color); /* Cor do texto */
+    border: 1px solid var(--bg-color); /* Adiciona uma borda */
+}
+
+#botao-busca:hover {
+    background-color: var(--primary-color); /* Muda a cor de fundo ao passar o mouse */
+    color: var(--bg-color); /* Muda a cor do texto ao passar o mouse */
+    box-shadow: 0 0 0 0.1rem var(--primary-color); /* Adiciona uma sombra de caixa */
+}
+
+#botao-busca:active {
+    transform: scale(0.98); /* Efeito de clique (diminui o tamanho) */
+}
+
+/* Estilos para o botão de limpar */
+#limpar-busca {
+    padding: 0.8rem 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid var(--tertiary-color);
+    background-color: transparent;
+    color: var(--tertiary-color);
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    margin-left: 0.5rem;
+}
+
+#limpar-busca:hover {
+    background-color: #c90000;
+    color: var(--secondary-color);
+    border-color: #c90000;
+}
+
+/* Estilo do container da grade de cards */
+#card-container {
+    display: grid; /* Este já está no seu código, apenas confirmando */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Grade responsiva */
+    gap: 1.5rem; /* Espaçamento entre os cards */
+    max-width: 80rem; /* Largura máxima do conteúdo principal */
+    margin: 0 auto; /* Centraliza o conteúdo principal horizontalmente */
+    padding: 2rem 1rem;
+    flex-grow: 1; /* 4. Faz o main crescer para ocupar o espaço disponível, empurrando o footer */
+}
+
+/* Estilo individual de cada card */
+.card {
+    background: var(--card-bg-color); /* Nova cor de fundo para os cards */
+    border-radius: 16px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidade */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+    overflow: hidden; /* Garante que a imagem não vaze das bordas arredondadas */
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.5s ease-out forwards; /* Aplica a animação de fade-in */
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.01); /* Levanta e aumenta o card */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(139, 92, 246, 0.2); /* Sombra mais forte e um brilho roxo */
+    cursor: pointer; /* Muda o cursor para uma mão */
+}
+
+/* Container da imagem do card */
+.card-imagem-container {
+    height: 140px; /* Altura da imagem reduzida */
+    background-color: #ffffff; /* Fundo branco para os logos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.card-imagem-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Garante que a imagem caiba sem distorcer */
+}
+
+/* Container do conteúdo de texto do card */
+.card-conteudo {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Faz este container crescer para preencher o espaço */
+}
+
+.card h2 {
+    margin-top: 0; /* Remove a margem superior */
+    font-weight: 500; /* Peso da fonte */
+    font-size: 1.6rem; /* Tamanho da fonte */
+    margin-bottom: 0.25rem; /* Margem inferior */
+    color: var(--primary-color); /* Cor do texto */
+}
+
+.card p {
+    margin: 0.5rem 0; /* Margem superior e inferior */
+    line-height: 1.6; /* Altura da linha para melhor legibilidade */
+    font-size: 1rem; /* Tamanho da fonte */
+    color: var(--tertiary-color); /* Usando a cor de texto secundária para menos ênfase */
+}
+
+.card p:last-of-type {
+    flex-grow: 1; /* Empurra o link "Saiba Mais" para o final */
+}
+
+.card p strong {
+    color: var(--secondary-color); /* Cor do texto em negrito */
+    font-weight: 400; /* Peso da fonte */
+}
+
+/* Estilo do link "Saiba Mais" */
+.card-conteudo a {
+    color: var(--primary-color); /* Cor do link */
+    text-decoration: none; /* Remove o sublinhado padrão */
+    font-weight: 500; /* Peso da fonte */
+    margin-top: 1rem; /* Espaço acima do link */
+    align-self: flex-start; /* Alinha o link à esquerda */
+}
+
+.card-conteudo a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+/* Animação para os cards aparecerem suavemente */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer {
+    /* position: absolute; foi removido para que o footer siga o fluxo normal */
+    width: 100%; /* Largura total */
+    color: var(--tertiary-color); /* Cor do texto */
+    background-color: var(--bg-color); /* Cor de fundo */
+    padding: 15px 20px; /* Espaçamento interno */
+    border-top: 1px solid #3c4043; /* Borda superior */
+    font-size: 0.8rem; /* Tamanho da fonte */
+}
+
+.footer-location {
+    color: #9aa0a6; /* Cor do texto */
+    margin-bottom: 10px; /* Margem inferior */
+}
+
+.footer-links {
+    list-style: none; /* Remove os marcadores da lista */
+    display: flex; /* Habilita o layout flexbox */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 15px; /* Espaçamento entre os links */
+}
+
+.footer-links a {
+    color: var(--secondary-color); /* Cor do link */
+    text-decoration: none; /* Remove o sublinhado */
+    transition: color 0.2s; /* Transição suave para a cor */
+}
+
+/* Classe para esconder elementos visualmente, mas mantê-los acessíveis para leitores de tela */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color); /* Muda a cor do link ao passar o mouse */
+}
+
+@media (max-width: 768px) {
+    header { /* Estilos para telas com largura máxima de 768px */
+        flex-direction: column; /* Organiza os itens do cabeçalho em coluna */
+        padding: 1rem; /* Reduz o espaçamento interno */
+    }
+
+    header h1 { /* Estilos para o h1 no cabeçalho em telas menores */
+        text-align: center; /* Centraliza o texto */
+        margin-bottom: 1rem; /* Adiciona margem inferior */
+    }
+
+    #busca { /* Estilos para o input em telas menores */
+        width: 90vw; /* Largura baseada na largura da viewport */
+        font-size: 1.2rem; /* Reduz o tamanho da fonte */
+    }
+
+    #card-container { /* Estilos para o main em telas menores */
+        padding: 0 1rem; /* Adiciona espaçamento lateral */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 { /* Estilos para o h1 em telas com largura máxima de 480px */
+        font-size: 1rem; /* Reduz ainda mais o tamanho da fonte */
+        max-width: 70%; /* Define uma largura máxima */
+        word-wrap: break-word; /* Permite a quebra de palavras longas */
+    }
+
+    #busca {
+        font-size: 1rem; /* Reduz o tamanho da fonte */
+    }
+
+    .card h2 { /* Estilos para o h2 do article em telas muito pequenas */
+        font-size: 1.3rem; /* Reduz o tamanho da fonte */
+    }
+
+    .search-container { /* Estilos para a div do cabeçalho em telas muito pequenas */
+        display: flex; /* Habilita flexbox */
+        align-items: center; /* Alinha itens ao centro */
+        justify-content: center; /* Centraliza itens */
+        flex-direction: column; /* Organiza em coluna */
+        gap: 0.5rem; /* Espaçamento entre os itens */
+    }
+
+    .footer { /* Estilos para o rodapé em telas muito pequenas */
+        display: none; /* Oculta o rodapé */
+    }
+
+    button { /* Estilos para o botão em telas muito pequenas */
+        margin-top: 1rem; /* Adiciona margem no topo */
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-section h2 {
+        font-size: 2rem;
+    }
+    .intro-section p {
+        font-size: 1rem;
+    }
+}
+
+/* --- Estilos do Modal --- */
+
+/* O fundo escurecido que cobre a página inteira */
+.modal-overlay {
+    position: fixed; /* Fica fixo na tela, mesmo com rolagem */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo preto semi-transparente */
+    display: none; /* Começa escondido */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Garante que fique na frente de tudo */
+}
+
+/* Classe para tornar o modal visível */
+.modal-visible {
+    display: flex; /* Muda para flex para ativar o alinhamento */
+}
+
+/* A janela do modal em si */
+.modal {
+    background-color: var(--card-bg-color);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    position: relative;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+/* Botão de fechar (o 'X') */
+.modal-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--tertiary-color);
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+}
+
+.modal-close-btn:hover {
+    color: var(--secondary-color);
+}
+
+/* Estilos para o conteúdo dentro do modal */
+#modal-content h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+#modal-content img {
+    max-width: 100px;
+    float: right; /* Flutua a imagem para a direita do título */
+    margin-left: 1rem;
+}
+
+/* Estilo do link dentro do modal, transformado em botão */
+#modal-content a {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    background-image: linear-gradient(45deg, var(--primary-color), #a855f7);
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+#modal-content a:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 201, 167, 0.4);
+}
+
+/* Animação para o esqueleto de carregamento */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Animação de entrada do modal */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

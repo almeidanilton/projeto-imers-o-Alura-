@@ -1,0 +1,274 @@
+[
+  {
+    "nome": "javascript",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+    "descrição": "Linguagem de programação utilizada para desenvolvimento web.",
+    "ano": 1995,
+    "link": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript",
+    "popularidade": 18.5
+  },
+  {
+    "nome": "python",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+    "descrição": "O Python é uma linguagem de programação de alto nível.",
+    "ano": 1991,
+    "link": "https://docs.python.org/3/",
+    "popularidade": 15.2
+  },
+  {
+    "nome": "java",
+    "imagem": "https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg",
+    "descrição": "Java é uma linguagem de programação orientada a objetos, popular para aplicações corporativas.",
+    "ano": 1995,
+    "link": "https://docs.oracle.com/en/java/",
+    "popularidade": 12.4
+  },
+  {
+    "nome": "c++",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg",
+    "descrição": "Uma linguagem de programação de propósito geral com recursos de programação de baixo e alto nível.",
+    "ano": 1985,
+    "link": "https://isocpp.org/",
+    "popularidade": 9.8
+  },
+  {
+    "nome": "c#",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Logo_C_sharp.svg",
+    "descrição": "Linguagem de programação moderna, orientada a objetos e desenvolvida pela Microsoft.",
+    "ano": 2000,
+    "link": "https://docs.microsoft.com/pt-br/dotnet/csharp/",
+    "popularidade": 7.6
+  },
+  {
+    "nome": "ruby",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/7/73/Ruby_logo.svg",
+    "descrição": "Uma linguagem de programação dinâmica e de código aberto com foco na simplicidade e produtividade.",
+    "ano": 1995,
+    "link": "https://www.ruby-lang.org/pt/",
+    "popularidade": 2.1
+  },
+  {
+    "nome": "php",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg",
+    "descrição": "Linguagem de script de código aberto amplamente utilizada, especialmente adequada para desenvolvimento web.",
+    "ano": 1995,
+    "link": "https://www.php.net/",
+    "popularidade": 5.5
+  },
+  {
+    "nome": "swift",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Swift_logo.svg",
+    "descrição": "Linguagem de programação poderosa e intuitiva para macOS, iOS, watchOS e tvOS, criada pela Apple.",
+    "ano": 2014,
+    "link": "https://developer.apple.com/swift/",
+    "popularidade": 2.8
+  },
+  {
+    "nome": "go",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/0/05/Go_Logo_Blue.svg",
+    "descrição": "Linguagem de programação de código aberto desenvolvida pelo Google, focada em simplicidade e eficiência.",
+    "ano": 2009,
+    "link": "https://go.dev/",
+    "popularidade": 3.1
+  },
+  {
+    "nome": "typescript",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
+    "descrição": "Um superset do JavaScript que adiciona tipagem estática opcional, desenvolvido pela Microsoft.",
+    "ano": 2012,
+    "link": "https://www.typescriptlang.org/",
+    "popularidade": 4.5
+  },
+  {
+    "nome": "rust",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg",
+    "descrição": "Linguagem de programação focada em segurança, concorrência e performance, patrocinada pela Mozilla.",
+    "ano": 2010,
+    "link": "https://www.rust-lang.org/",
+    "popularidade": 3.9
+  },
+  {
+    "nome": "kotlin",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin_Icon.png",
+    "descrição": "Linguagem de programação moderna que torna os desenvolvedores mais felizes. Oficial para Android.",
+    "ano": 2011,
+    "link": "https://kotlinlang.org/",
+    "popularidade": 2.5
+  },
+  {
+    "nome": "r",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/1/1b/R_logo.svg",
+    "descrição": "Linguagem e ambiente de software livre para computação estatística e gráficos.",
+    "ano": 1993,
+    "link": "https://www.r-project.org/",
+    "popularidade": 2.1
+  },
+  {
+    "nome": "scala",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Scala-full-color.svg/1200px-Scala-full-color.svg.png",
+    "descrição": "Linguagem que combina programação orientada a objetos e funcional, projetada para ser concisa e escalável.",
+    "ano": 2004,
+    "link": "https://www.scala-lang.org/",
+    "popularidade": 1.5
+  },
+  {
+    "nome": "react",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+    "descrição": "Biblioteca declarativa e eficiente para construir interfaces de usuário baseadas em componentes.",
+    "ano": 2013,
+    "link": "https://reactjs.org",
+    "popularidade": 6.8
+  },
+  {
+    "nome": "vue.js",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg",
+    "descrição": "Framework progressivo para construir interfaces de usuário, conhecido por sua facilidade de integração e reatividade.",
+    "ano": 2014,
+    "link": "https://vuejs.org",
+    "popularidade": 4.2
+  },
+  {
+    "nome": "node.js",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
+    "descrição": "Ambiente de execução (runtime) que permite a execução de código no lado do servidor, baseado no motor V8 do Chrome.",
+    "ano": 2009,
+    "link": "https://nodejs.org",
+    "popularidade": 7.1
+  },
+  {
+    "nome": "mongodb",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg",
+    "descrição": "Banco de dados NoSQL orientado a documentos, projetado para escalabilidade horizontal e desenvolvimento ágil.",
+    "ano": 2009,
+    "link": "https://www.mongodb.com",
+    "popularidade": 4.8
+  },
+  {
+    "nome": "postgresql",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg",
+    "descrição": "Sistema de gerenciamento de banco de dados relacional de código aberto, focado em extensibilidade, integridade e conformidade SQL.",
+    "ano": 1996,
+    "link": "https://www.postgresql.org",
+    "popularidade": 5.3
+  },
+  {
+    "nome": "docker",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg",
+    "descrição": "Plataforma de conteinerização que empacota aplicações e suas dependências em contêineres leves e portáteis.",
+    "ano": 2013,
+    "link": "https://www.docker.com",
+    "popularidade": 4.9
+  },
+  {
+    "nome": "kubernetes",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg",
+    "descrição": "Sistema de orquestração de contêineres de código aberto que automatiza a implantação, escalonamento e gerenciamento de aplicações conteinerizadas.",
+    "ano": 2014,
+    "link": "https://kubernetes.io",
+    "popularidade": 4.1
+  },
+  {
+    "nome": "terraform",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/0/04/Terraform_Logo.svg",
+    "descrição": "Ferramenta de Infraestrutura como Código (IaC) que permite provisionar e gerenciar recursos de infraestrutura de forma declarativa.",
+    "ano": 2014,
+    "link": "https://www.terraform.io",
+    "popularidade": 2.4
+  },
+  {
+    "nome": "svelte",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg",
+    "descrição": "Compilador que move o trabalho de processamento para a etapa de construção, resultando em código Vanilla altamente eficiente no frontend.",
+    "ano": 2016,
+    "link": "https://svelte.dev",
+    "popularidade": 1.9
+  },
+  {
+    "nome": "erlang",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/0/04/Erlang_logo.svg",
+    "descrição": "Linguagem de programação funcional, concorrente e para sistemas distribuídos, utilizada em telecomunicações.",
+    "ano": 1986,
+    "link": "https://www.erlang.org",
+    "popularidade": 0.8
+  },
+  {
+    "nome": "haskell",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Haskell-Logo.svg",
+    "descrição": "Linguagem de programação puramente funcional, lazy e tipada estaticamente, conhecida por sua expressividade matemática.",
+    "ano": 1990,
+    "link": "https://www.haskell.org",
+    "popularidade": 1.1
+  },
+  {
+    "nome": "clojure",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Clojure_logo.svg",
+    "descrição": "Dialeto da linguagem Lisp que roda na Java Virtual Machine (JVM), focado em imutabilidade e concorrência.",
+    "ano": 2007,
+    "link": "https://clojure.org",
+    "popularidade": 0.9
+  },
+  {
+    "nome": "graphql",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/1/17/GraphQL_Logo.svg",
+    "descrição": "Linguagem de consulta para APIs desenvolvida pelo Facebook, permitindo que os clientes solicitem exatamente os dados de que precisam.",
+    "ano": 2015,
+    "link": "https://graphql.org",
+    "popularidade": 3.3
+  },
+  {
+    "nome": "next.js",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg",
+    "descrição": "Framework React para produção que oferece renderização híbrida, otimização de imagem e roteamento integrado.",
+    "ano": 2016,
+    "link": "https://nextjs.org",
+    "popularidade": 3.8
+  },
+  {
+    "nome": "nestjs",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/a/a8/NestJS.svg",
+    "descrição": "Framework para construção de aplicações backend escaláveis e eficientes, inspirado em Angular e usando Node.js.",
+    "ano": 2017,
+    "link": "https://nestjs.com",
+    "popularidade": 2.2
+  },
+  {
+    "nome": "prometheus",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/3/38/Prometheus_software_logo.svg",
+    "descrição": "Sistema de monitoramento e alerta de código aberto que coleta métricas de alvos configurados em intervalos específicos.",
+    "ano": 2012,
+    "link": "https://prometheus.io",
+    "popularidade": 2.6
+  },
+  {
+    "nome": "grafana",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Grafana_logo.svg",
+    "descrição": "Plataforma de código aberto para visualização e análise de métricas, permitindo criar dashboards interativos a partir de diversas fontes de dados.",
+    "ano": 2014,
+    "link": "https://grafana.com",
+    "popularidade": 2.3
+  },
+  {
+    "nome": "solidity",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/9/98/Solidity_logo.svg",
+    "descrição": "Linguagem de programação orientada a contratos para implementação de contratos inteligentes em plataformas blockchain, como Ethereum.",
+    "ano": 2014,
+    "link": "https://soliditylang.org",
+    "popularidade": 1.4
+  },
+  {
+    "nome": "sqlite",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/3/38/SQLite370.svg",
+    "descrição": "Biblioteca de software que fornece um sistema de gerenciamento de banco de dados relacional em um único arquivo, sem necessidade de um servidor separado.",
+    "ano": 2000,
+    "link": "https://www.sqlite.org",
+    "popularidade": 3.5
+  },
+  {
+    "nome": "dart",
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Dart-logo.png",
+    "descrição": "Linguagem de programação otimizada para clientes para criar apps rápidos em qualquer plataforma, desenvolvida pelo Google.",
+    "ano": 2011,
+    "link": "https://dart.dev",
+    "popularidade": 1.8
+  }
+]

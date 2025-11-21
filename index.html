@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Base de Linguagens</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Base de Linguagens</h1>
+        <form id="form-busca">
+            <label for="busca" class="sr-only">Buscar a Linguagem</label>
+            <input type="search" id="busca" placeholder="Buscar a Linguagem">
+            <button type="submit" id="botao-busca" class="sr-only">Buscar</button>
+            <button type="button" id="limpar-busca">Limpar</button>
+        </form>
+    </header>
+
+    <section class="intro-section">
+        <h2>Descubra o universo das linguagens de programação.</h2>
+        <p>Pesquise, explore e aprenda os detalhes de cada tecnologia em um só lugar.</p>
+        <p>Use a barra de busca para encontrar linguagens específicas ou clique em um card para ver mais detalhes.</p>
+    </section>
+
+    <section class="chart-container">
+        <h2>Popularidade das Linguagens (%)</h2>
+        <canvas id="linguagensChart"></canvas>
+    </section>
+
+   <main id="card-container">
+     <!-- Os cards gerados pelo JavaScript serão inseridos aqui -->
+   </main>
+
+    <footer class="footer">
+        <ul class="footer-links">
+            <li>
+                <a href="https://github.com/almeidanilton">GitHub</a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/jos%C3%A9-nilton-a1b8b6280/">linkedin</a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/j7_nilton/">Instagram</a>
+            </li>
+    </footer>
+
+    <!-- Estrutura do Modal (inicialmente escondida) -->
+    <div id="modal-overlay" class="modal-overlay">
+        <div id="modal" class="modal">
+            <button id="modal-close-btn" class="modal-close-btn">&times;</button>
+            <div id="modal-content">
+                <!-- O conteúdo detalhado da linguagem será inserido aqui pelo JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
