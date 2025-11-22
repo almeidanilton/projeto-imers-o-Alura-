@@ -24,9 +24,7 @@ Este projeto foi criado com o objetivo de orientar iniciantes, oferecendo uma di
 
 ---
 
-## 🎯 Objetivo do Projeto
+## 📊 Gráfico de Popularidade das Linguagens
 
-Criar uma plataforma acessível para quem está começando na área de programação, oferecendo um ponto de partida confiável sobre diversas linguagens.
-
-Meu propósito foi facilitar a vida de quem, como eu, já teve várias dúvidas sobre qual linguagem estudar e por onde começar.
+O projeto também inclui um gráfico que apresenta a popularidade de diversas linguagens de programação. Esse recurso ajuda o usuário a visualizar de maneira simples quais linguagens são mais utilizadas atualmente, oferecendo uma compreensão melhor sobre o cenário do mercado.
 
